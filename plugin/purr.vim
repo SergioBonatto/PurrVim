@@ -1,13 +1,13 @@
-" Plugin: VimKawaiiCat
-" Description: A super kawaii cat face that cheers you on while coding!
-" Author: Claude
+" Plugin: PurrVim
+" Description: A playful cat companion that cheers you on while coding in Vim!
+" Author: SergioBonatto
 
-if exists('g:loaded_vim_kawaii_cat')
+if exists('g:loaded_purrvim')
     finish
 endif
-let g:loaded_vim_kawaii_cat = 1
+let g:loaded_purrvim = 1
 
-" Super kawaii cat face collection
+" Collection of cute cat faces
 let s:cat_faces = [
     \ "(=^・ω・^=)",
     \ "(=^･ｪ･^=)",
@@ -23,7 +23,7 @@ let s:cat_faces = [
     \ "(ﾐ⚈ ﻌ ⚈ﾐ)"
     \]
 
-" Kawaii motivational messages (English + Japanese)
+" Motivational messages (English + Japanese)
 let s:messages = [
     \ "You're coding purrfectly~! ♡",
     \ "Sugoi! Amazing work!",
@@ -80,16 +80,16 @@ function! s:UpdateCat()
     endif
 endfunction
 
-" Function to display a random kawaii cat face with message
+" Function to display a random cat face with message
 function! s:ShowCat()
-    " Get random cat face, message and symbol
+    " Get random cat face, message, and symbol
     let l:cat_face = s:cat_faces[rand() % len(s:cat_faces)]
     let l:message = s:messages[rand() % len(s:messages)]
     let l:symbol = s:kawaii_symbols[rand() % len(s:kawaii_symbols)]
-    
-    " Create a cute formatted message
+
+    " Create a formatted message
     let l:display = l:cat_face . " " . l:message . " " . l:symbol
-    
+
     " Display with highlight
     echohl MoreMsg
     echomsg l:display
@@ -106,10 +106,10 @@ function! s:ShowSleepyCat()
         \ "Neko is getting sleepy...",
         \ "More coding please~?"
         \]
-    
+
     let l:face = l:sleepy_faces[rand() % len(l:sleepy_faces)]
     let l:message = l:sleepy_messages[rand() % len(l:sleepy_messages)]
-    
+
     echohl Comment
     echomsg l:face . " " . l:message
     echohl None
@@ -120,23 +120,23 @@ function! s:ShowCatSparkles()
     let l:sparkles = ["✧･ﾟ: *", "✩°｡⋆", "⊹˚.", "✧˖°", "⋆｡°✩"]
     let l:face = s:cat_faces[rand() % len(s:cat_faces)]
     let l:sparkle = l:sparkles[rand() % len(l:sparkles)]
-    
+
     echohl WarningMsg
     echomsg l:sparkle . " " . l:face . " " . l:sparkle
     echohl None
 endfunction
 
-" Command to manually show the cat
-command! KawaiiCat call s:ShowCat()
-command! KawaiiSparkle call s:ShowCatSparkles()
+" Commands to manually trigger the cat
+command! PurrVimCat call s:ShowCat()
+command! PurrVimSparkle call s:ShowCatSparkles()
 
 " Autocommands to track typing
-augroup VimKawaiiCat
+augroup PurrVim
     autocmd!
     autocmd TextChanged,TextChangedI * call s:UpdateCat()
-    autocmd VimEnter * echomsg "ฅ^•ﻌ•^ฅ Kawaii neko is here to cheer you on! Nya~! ✧･ﾟ"
+    autocmd VimEnter * echomsg "ฅ^•ﻌ•^ฅ PurrVim is here to cheer you on! Nya~! ✧･ﾟ"
 augroup END
 
 " Suggested keybindings
-nnoremap <silent> <Leader>c :KawaiiCat<CR>
-nnoremap <silent> <Leader>cs :KawaiiSparkle<CR>
+nnoremap <silent> <Leader>c :PurrVimCat<CR>
+nnoremap <silent> <Leader>cs :PurrVimSparkle<CR>
