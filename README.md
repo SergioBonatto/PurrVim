@@ -10,31 +10,35 @@
 ✨ **Subtle sparkles:** Just a little *hikari* to make coding more *tanoshii*!
 😴 **Sleepy mode:** If you stop for too long, the neko gets *nemui* and asks, "More coding please~?"
 🎀 **Customization:** Because even a *nyanko* knows your workflow is special!
+⚡ **JoJo references:** Your coding gets PLUS ULTRA with motivational JoJo quotes like "ORA ORA ORA!" and "ZA WARUDO!"
 
 ## 🐾 How to Install This Neko? 🐾
-So easy it’s like a purr! Just clone the repo into your Vim:
+So easy it's like a purr! Just clone the repo into your Vim:
 ```sh
 git clone https://github.com/SergioBonatto/PurrVim.git ~/.vim/pack/plugins/start/PurrVim
 ```
 Restart Vim and your neko will welcome you with a *"Nya~! ✧･ﾟ"*
 
 ## 🎀 How to Play with It? 🎀
-- `:KawaiiCat` – Summon your neko for a motivational purr!
-- `:KawaiiSparkle` – Activate *hikari mode* and sparkle up your code!
+- `:PurrVimCat` – Summon your neko for a motivational purr!
+- `:PurrVimSparkle` – Activate *hikari mode* and sparkle up your code!
 
 ### Suggested Keybindings:
 Want your neko always near? Add this to your `.vimrc`:
 ```vim
-nnoremap <silent> <Leader>c :KawaiiCat<CR>
-nnoremap <silent> <Leader>cs :KawaiiSparkle<CR>
+nnoremap <silent> <Leader>c :PurrVimCat<CR>
+nnoremap <silent> <Leader>cs :PurrVimSparkle<CR>
 ```
 (I use `\` as `<Leader>`, but feel free to customize, *nya~*!)
 
 ## 🌸 Kawaii Configurations 🌸
-Make your neko match your style:
+Your neko automatically appears when you're coding, but you can adjust its behavior:
 ```vim
-let g:purrvim_frequency = 10  " How often the neko appears (higher = less).
-let g:purrvim_sleepy_time = 30 " Time before it gets *nemui*.
+" How often the neko appears (higher = less frequently)
+let g:purrvim_frequency = 15
+
+" Time in seconds before neko gets sleepy (default: 30)
+let g:purrvim_sleepy_time = 30
 ```
 Set the purring to your rhythm!
 
